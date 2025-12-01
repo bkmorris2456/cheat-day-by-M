@@ -16,8 +16,13 @@ export default function Home() {
                 <Grid item sm={12} sx={{display: "flex"}}>
                     <Typography variant="h1" color="black">Banner Image Here</Typography>
                 </Grid>
-                <Grid item sm={12}>
+                <Grid item sm={12} 
+                    sx={{
+                        width: "80%",
+                    }}
+                >
                     <Typography variant="h1">Navbar here</Typography>
+                    <Navbar/>
                 </Grid>
                 <Grid item sm={12}>
                     Searchbar Here
