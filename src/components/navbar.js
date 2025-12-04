@@ -9,31 +9,56 @@ import {
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Person2Icon from '@mui/icons-material/Person2';
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+
+    const navigate = useNavigate();
     
     return (
-        <Box 
+        <AppBar position="static"
             sx={{
-                flexGrow: 1,
+                backgroundColor: "gray",
+                position: "fixed",
+                width: "100%",
+                zIndex: 1000,
             }}
         >
-            <AppBar position="static"
+            <Toolbar
                 sx={{
-                    width: "100%",
-                    backgroundColor: "gray",
+                    display: "flex",
+                    justifyContent: "space-between",
                 }}
             >
-                <Toolbar>
-                    <Typography variant="h6"
-                        sx={{
-                            mr: 12,
-                        }}
+
+            {/* left-side, company name */}
+                <Typography 
+                    variant="h6"
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => navigate("/")}
+                >
+                    Cheat Day by Malia
+                </Typography>
+
+            {/* middle, pages */}
+                <Box sx={{display: "flex", gap: 2}}>
+                    <Button color="inherit" onClick={() => navigate("/about")}>About</Button>
+                    <Button color="inherit" onClick={() => navigate("/contact")}>Contact</Button>
+                </Box>
+
+            {/* right, profile and shopping cart */}
+
+                <Box sx={{display: "flex", gap: 1}}>
+                    <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={() => navigate("/profile")}
+                        color="inherit"
                     >
-                        Cheat Day by Malia
-                    </Typography>
-                    <Button color="inherit">About</Button>
-                    <Button color="inherit">Contact</Button>
+                    <Person2Icon/>
+                    </IconButton>
                     <IconButton
                         size="large"
                         aria-label="account of current user"
@@ -44,19 +69,9 @@ export default function Navbar() {
                     >
                         <ShoppingCartIcon/>
                     </IconButton>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={console.log("Profile Pressed!")}
-                        color="inherit"
-                    >
-                       <Person2Icon/>
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
-        </Box>
+                </Box>
+            </Toolbar>
+        </AppBar>
     )
 
 }
