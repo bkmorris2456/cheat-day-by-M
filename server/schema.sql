@@ -22,7 +22,12 @@ CREATE TABLE products (
 );
 
 CREATE TABLE reviews (
-
+    review_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    product_id INTEGER REFERENCES products(product_id),
+    rating INTEGER DEFAULT 0,
+    comment TEXT,
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE users (
