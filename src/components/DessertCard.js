@@ -15,7 +15,11 @@ export default function DessertCard({ dessert }) {
                 padding: 2,
              }}
         >
-        <CardActionArea component={Link} to={`/desserts/${dessert.id}`}>
+        <CardActionArea 
+            component={Link} 
+            to="/dessertDetails"
+            state={{ dessert }}
+        >
             <CardMedia
             component="img"
             height="180"

@@ -16,7 +16,7 @@ const desserts = [
     fullDescription: "Fresh lemon curd...",
     image: "/images/tart1.jpg",
     ingredients: "Flour, lemon, butter, sugar",
-    price: 12.0,
+    price: 12.00,
   },
 
   {
