@@ -16,6 +16,7 @@ export default function Navbar() {
     const navigate = useNavigate();
     
     return (
+        // Main container for navbar
         <AppBar position="static"
             sx={{
                 backgroundColor: "gray",
@@ -44,6 +45,7 @@ export default function Navbar() {
                 <Box sx={{display: "flex", gap: 2}}>
                     <Button color="inherit" onClick={() => navigate("/about")}>About</Button>
                     <Button color="inherit" onClick={() => navigate("/contact")}>Contact</Button>
+                    <Button color="inherit" onClick={() => navigate("/posts")}>Posts</Button>
                 </Box>
 
             {/* right, profile and shopping cart */}

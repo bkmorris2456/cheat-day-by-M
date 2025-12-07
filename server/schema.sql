@@ -2,6 +2,7 @@ CREATE TABLE inventory (
     inventory_id SERIAL PRIMARY KEY,
     item_name VARCHAR(100),
     quantity INTEGER,
+    last_restocked DATE
 );
 
 CREATE TABLE orders (
@@ -37,4 +38,10 @@ CREATE TABLE users (
     email VARCHAR(100) UNIQUE NOT NULL,
     password_hash TEXT,
     created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE analytics (
+    a_id SERIAL PRIMARY KEY,
+    revenue INTEGER DEFAULT 0;
+    total_orders INTEGER DEFAULT 0;
 );
